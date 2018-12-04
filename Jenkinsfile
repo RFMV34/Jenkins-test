@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               bat 'cp -R dist\\* C:\\Users\\gulanf\\Desktop\\JenkinsTest'
+               bat 'cp -R dist\\** C:\\Users\\gulanf\\Desktop\\JenkinsTest'
             }
         }
     }
