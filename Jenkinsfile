@@ -16,6 +16,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                bat "rm -rf $DIST_PATH"
                 bat "cp -R dist\\Jenkins-Test $DIST_PATH"
             }
         }
