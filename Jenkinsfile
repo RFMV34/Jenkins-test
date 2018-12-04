@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Say $start"
                 bat 'npm install'
                 bat 'npm run build'
             }
@@ -17,7 +16,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               bat 'cp -R dist\\Jenkins-Test C:\\Users\\gulanf\\Desktop\\JenkinsTest'
+                bat "cp -R dist\\Jenkins-Test $DIST_PATH"
             }
         }
     }
