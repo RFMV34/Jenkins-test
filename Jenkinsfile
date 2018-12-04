@@ -6,7 +6,6 @@ pipeline {
             steps {
                 bat 'npm install'
                 bat 'npm run build'
-                archiveArtifacts artifacts: 'dist/**', fingerprint: true
             }
         }
         stage('Test') {
@@ -17,7 +16,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               bat 'cp -R dist C:\\Users\\gulanf\\Desktop'
+               bat 'cp -R dist\\* C:\\Users\\gulanf\\Desktop\\JenkinsTest'
             }
         }
     }
